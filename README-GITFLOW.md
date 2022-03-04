@@ -62,6 +62,8 @@
         `git branch -d feature/<feature_branch_name>`
     - When using the git-flow extensions:
         `git flow feature finish <feature_branch_name>` => this command will run automatically 3 commands above, merge feature branch into `qa` and delete automatically feature branch.
+        Then you can run following commands to push code to `qa`
+        `git push origin qa`
     - But following our flow, all code need to create the PRs to review first, so we don't care about `finish` command
 
     3.4. Get a feature published by another user
@@ -92,8 +94,14 @@
         `git checkout qa`
         `git merge hotfix/<hotfix_branch_name>`
         `git branch -d hotfix/<hotfix_branch_name>`
+        `git checkout master`
     - When using the git-flow extensions:
         `git flow hotfix finish <feature_branch_name>` => this command will run automatically 4 commands above, and then delete hotfix branch automatically.
+        Then you can run following commands to push code to `master` and `qa`
+        `git push origin master`
+        `git checkout qa`
+        `git push origin qa`
+
     - If you need to do code review by PR, don't care about the finish command
 
 6. Working with release branch
@@ -119,6 +127,7 @@
 ### References
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 http://danielkummer.github.io/git-flow-cheatsheet
+https://yakiloo.com/getting-started-git-flow/
 
 
 
